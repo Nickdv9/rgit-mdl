@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    
+    <title>RGIT</title>
+    
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+    
+    <meta name="HandheldFriendly" content="true">
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no">
+    
+     <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+    
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/smallcon.png">
+
+    
+    <link href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;amp;lang=en" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+     <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body id="top">
+    <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+     <a href="contact.html" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
+      <header class="mdl-layout__header mdl-layout__header--waterfall site-header">
+        <div class="mdl-layout__header-row site-logo-row"><span class="mdl-layout__title">
+            <div class="site-logo"></div><span class="site-description">ROASTED!!</span></span><div class="mdl-layout__header-row site-logo-row"></div></div>
+          
+        <div class="mdl-layout__header-row site-navigation-row ">
+          <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font ">
+          <a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="index.html">Home</a>
+          <a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="portfolio.html">Dept</a>
+          <a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="about.html">About</a>
+          <a class="mdl-navigation__link mdl-js-button mdl-js-ripple-effect" href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </header>
+      
+       <div class="demo-drawer mdl-layout__drawer mdl-color--blue-grey-900 mdl-color-text--blue-grey-50">
+        <header class="demo-drawer-header">
+          <img src="images/user.jpg" class="demo-avatar">
+          <div class="demo-avatar-dropdown">
+            <span>hello@example.com</span>
+            <div class="mdl-layout-spacer"></div>
+            <button id="accbtn" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon">
+              <i class="material-icons" role="presentation">arrow_drop_down</i>
+              <span class="visuallyhidden">Accounts</span>
+            </button>
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="accbtn">
+              <li class="mdl-menu__item">hello@example.com</li>
+              <li class="mdl-menu__item">info@example.com</li>
+              <li class="mdl-menu__item"><i class="material-icons">add</i>Add another account...</li>
+            </ul>
+          </div>
+        </header>
+        <nav class="demo-navigation mdl-navigation mdl-color--blue-grey-800 ">
+          <a class="mdl-navigation__link " href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">home</i>Home</a>
+          <a id="submenu" class="mdl-navigation__link" href="#"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">people</i>Login</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">inbox</i>Inbox</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">delete</i>Trash</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i>Spam</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">forum</i>Forums</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">flag</i>Updates</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_offer</i>Promos</a>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">shopping_cart</i>Purchases</a>
+          
+          <div class="mdl-layout-spacer"></div>
+          <a class="mdl-navigation__link" href=""><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">help_outline</i><span class="visuallyhidden">Help</span></a>
+        </nav>
+        <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect"
+        for="submenu">
+            <li class="mdl-menu__item"><a class="mdl-navigation__link" href="login/login.html">professor</a></li>
+            <li class="mdl-menu__item"><a class="mdl-navigation__link" href="login1/login1.html">student</a></li>
+        </ul>
+      </div>
+      
+      <main class="mdl-layout__content">
+        <div class="site-content">
+          <div class="container"><div class="mdl-grid site-max-width">
+    <div class="mdl-cell mdl-cell--12-col mdl-card mdl-shadow--4dp welcome-card portfolio-card">
+        <div class="mdl-card__title">
+          <h2 class="mdl-card__title-text">Write here!</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            <center><h5>Welcome to Rajiv Gandhi Institute of Technology!</h5></center>
+        </div>
+    <!--<div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent" href=" https://templateflip.com/templates/material-portfolio/" target="_blank">
+            Download
+          </a>
+        </div>-->
+    </div>
+</div>
+
+<section class="section--center mdl-grid site-max-width">
+  <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white  mdl-shadow--4dp">
+    <i class="material-icons">play_circle_filled</i>
+  </header>
+  <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone  mdl-shadow--4dp">
+    <div class="mdl-card__title">
+        <h2 class="mdl-card__title-text">Introduction</h2>
+    </div>
+    <div class="mdl-card__supporting-text">
+      Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
+    </div>
+    <div class="mdl-card__actions  mdl-card--border">
+      <a href="#" class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">Watch Intro</a>
+    </div>
+  </div>
+</section>
+<section class="section--center mdl-grid site-max-width">
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="img/portfolio1.jpg" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Rocky Peak</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+        </div>
+    </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="img/portfolio2.jpg" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Night Shadow</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+        </div>
+    </div>
+    <div class="mdl-cell mdl-card mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__media">
+            <img class="article-image" src="img/portfolio3.jpg" border="0" alt="">
+        </div>
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Sky Reach</h2>
+        </div>
+        <div class="mdl-card__supporting-text">
+            Enim labore aliqua consequat ut quis ad occaecat aliquip incididunt. Sunt nulla eu enim irure enim nostrud aliqua consectetur ad consectetur sunt ullamco officia. Ex officia laborum et consequat duis.
+        </div>
+    </div>
+</section>
+
+<section class="section--center mdl-grid site-max-width homepage-portfolio">
+    <a class="mdl-button mdl-button--raised mdl-js-button mdl-js-ripple-effect mdl-button--accent" href="portfolio.html">View Portfolio</a>
+</section>
+
+<div class="homepage-footer">
+  <section class="mdl-grid site-max-width">
+      <div class="mdl-cell mdl-card mdl-cell--8-col mdl-cell--4-col-tablet  mdl-shadow--4dp portfolio-card">
+        <div class="mdl-card__title">
+            <h2 class="mdl-card__title-text">Testimonials</h2>
+        </div>
+        <ul class="demo-list-three mdl-list">
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons mdl-list__item-avatar">person</i>
+                <span>Amazing people, always ready to help!</span>
+                <span class="mdl-list__item-text-body">
+                  Bryan Cranston, CEO, Amazing.com
+                </span>
+              </span>
+            </li>
+            <li class="mdl-list__item mdl-list__item--three-line">
+              <span class="mdl-list__item-primary-content">
+                <i class="material-icons  mdl-list__item-avatar">person</i>
+                <span>Awesome work, they can do almost anything..</span>
+                <span class="mdl-list__item-text-body">
+                Aaron Paul, Marketing Lead, Awesome.com
+                </span>
+              </span>
+            </li>
+        </ul>
+      </div>
+      <div class="demo-card-event mdl-cell mdl-card mdl-shadow--4dp event-card portfolio-card">
+        <div class="mdl-card__title mdl-card--expand">
+          <h4>
+            Featured event:<br>
+            Community Meetup
+            May 24, 2018<br>
+            7-11pm
+          </h4>
+        </div>
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect mdl-button--accent">
+            Add to Calendar
+          </a>
+          <div class="mdl-layout-spacer"></div>
+          <i class="material-icons">event</i>
+        </div>
+      </div>
+  </section>
+</div></div>
+        </div>
+        <footer class="mdl-mini-footer">
+          <div class="footer-container">
+            <div class="mdl-logo">&copy; Unitiled. Design: <a href="https://templateflip.com/" target="_blank">TemplateFlip</a></div>
+            <ul class="mdl-mini-footer__link-list">
+              <li><a href="#">Privacy & Terms</a></li>
+            </ul>
+          </div>
+        </footer>
+      </main>
+      <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
+    </div>
+  </body>
+</html>
