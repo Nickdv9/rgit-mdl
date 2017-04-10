@@ -1,3 +1,67 @@
+<?php
+
+$dsn = 'mysql:host=localhost;dbname=mdl_db';
+$username = 'root';
+$password = '';
+
+try{
+    
+    $con = new PDO($dsn,$username,$password);
+    $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+} catch (Exception $ex) {
+    
+    echo 'Not Connected'.$ex->getMessage();
+    
+}
+
+$name = '';
+$email = '';
+$message = '';
+
+function getPosts()
+{
+    $data = array();
+    $posts[0] = $_POST['name'];
+    $posts[1] = $_POST['email'];
+    $posts[2] = $_POST['message'];
+    
+    
+    return $posts;
+}
+
+
+// Insert Data
+
+if(isset($_POST['insert']))
+{
+    $data = getPosts();
+    if(empty($data[0]) || empty($data[1]) || empty($data[2]))
+    {
+        echo 'Enter the data to insert';
+        
+    } else {
+        
+        $insertStmt = $con->prepare('INSERT INTO users(name,email,message) VALUES(:name,:email,:message)');
+        $insertStmt->execute(array(
+                     ':name'=> $data[0],
+                     ':email'=> $data[1],
+                     ':message'  => $data[2],
+        ));
+        if($insertStmt)
+        {    
+            
+                echo 'Data inserted';
+           
+        }
+    }
+}
+
+?>
+
+  
+
+  
 <!DOCTYPE html>
 
   <head>
@@ -12,17 +76,17 @@
     <link href="styles/main.css" rel="stylesheet">
   </head>
   <body id="top">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"><a href="contact.html" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"><a href="contact.php" id="contact-button" class="mdl-button mdl-button--fab mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--accent-contrast mdl-shadow--4dp"><i class="material-icons">mail</i></a>
       <header class="mdl-layout__header mdl-layout__header--waterfall site-header">
         <div class="mdl-layout__header-row site-logo-row"><span class="mdl-layout__title">
             <div class="site-logo"></div><span class="site-description">Material Design Portfolio</span></span></div>
         <div class="mdl-layout__header-row site-navigation-row mdl-layout--large-screen-only">
-          <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font"><a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
+          <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font"><a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.php">Contact</a>
           </nav>
         </div>
       </header>
       <div class="mdl-layout__drawer mdl-layout--small-screen-only">
-        <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font"><a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.html">Contact</a>
+        <nav class="mdl-navigation mdl-typography--body-1-force-preferred-font"><a class="mdl-navigation__link" href="index.html">Home</a><a class="mdl-navigation__link" href="portfolio.html">Portfolio</a><a class="mdl-navigation__link" href="about.html">About</a><a class="mdl-navigation__link" href="contact.php">Contact</a>
         </nav>
       </div>
       <main class="mdl-layout__content">
@@ -38,22 +102,22 @@
                 <div class="mdl-cell mdl-cell--12-col"><div class="mdl-card__supporting-text">
   <p>Contact our team using the contact form below:</p>
   <!--<form action="https://formspree.io/email@example.com" method="POST" class="form-contact">-->
-  <form action="rgitdb.php" method="POST">
+  <form action="contact.php" method="post">
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name">
+          <input class="mdl-textfield__input" pattern="[A-Z,a-z, ]*" type="text" id="Name" name="name" value="<?php echo $name;?>">
           <label class="mdl-textfield__label" for="Name">Name...</label>
           <span class="mdl-textfield__error">Letters and spaces only</span>
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <input class="mdl-textfield__input" type="text" id="Email" name="email">
+          <input class="mdl-textfield__input" type="text" id="Email" name="email" value="<?php echo $email;?>">
           <label class="mdl-textfield__label" for="Email">Email...</label>
       </div>
       <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-          <textarea class="mdl-textfield__input" type="text" rows="5" id="note" name="message"></textarea>
+          <textarea class="mdl-textfield__input" type="text" rows="5" id="note" name="message" value="<?php echo $message;?>"></textarea>
           <label class="mdl-textfield__label" for="note">Enter note</label>
       </div>
       <p>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" name="send">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" name="insert">
               Submit
           </button>
       </p>
