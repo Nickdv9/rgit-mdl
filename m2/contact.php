@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-US">
+
   <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -53,7 +53,7 @@
           <label class="mdl-textfield__label" for="note">Enter note</label>
       </div>
       <p>
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
+          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit" name="send">
               Submit
           </button>
       </p>
@@ -75,4 +75,3 @@
       <script src="https://code.getmdl.io/1.3.0/material.min.js" defer></script>
     </div>
   </body>
-</html>
